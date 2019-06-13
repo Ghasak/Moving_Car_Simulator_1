@@ -69,7 +69,7 @@ while True:
     pygame.display.update()
     frame_no += 1
     time_passed_seconds_cumulative = time_passed_seconds_cumulative+ time_passed_seconds
-    print(f"Time spent sincd lanching =  {int(time_passed_seconds_cumulative)}")
+    print(f"Time spent since lanching =  {int(time_passed_seconds_cumulative)}")
     print(f"while the delta time in millisecond = {time_passed *1000}")
     os.system('cls' if os.name == 'nt' else 'clear')
 
