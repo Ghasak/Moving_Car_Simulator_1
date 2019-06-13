@@ -1,5 +1,6 @@
 '''
     We will try to understand the motion of objects
+
 '''
 import pygame
 from pygame.locals import *
@@ -37,7 +38,7 @@ clock = pygame.time.Clock()
 x1 = 0.
 x2 = 0.
 # Speed in pixels per second
-speed = 36.  # pixel/second (1 second means 1 frame)
+speed = 36.  # pixel/second (1 second)
 frame_no = 0
 # --------------------------------------------------------
 time_passed_seconds_cumulative = 0
@@ -52,7 +53,7 @@ while True:
     screen.blit(textsurface,(x1+50,500))
 
     #screen.blit(car, (x2, 560))
-    time_passed = clock.tick(30)
+    time_passed = clock.tick(120)  # This is a timer
     time_passed_seconds = time_passed / 1000.0
     distance_moved = time_passed_seconds * speed
     x1 += distance_moved
@@ -69,6 +70,7 @@ while True:
     frame_no += 1
     time_passed_seconds_cumulative = time_passed_seconds_cumulative+ time_passed_seconds
     print(f"Time spent sincd lanching =  {int(time_passed_seconds_cumulative)}")
+    print(f"while the delta time in millisecond = {time_passed *1000}")
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
