@@ -28,13 +28,14 @@ x2 = 0.
 speed = 100.
 frame_no = 0
 # --------------------------------------------------------
+time_passed_seconds_cumulative = 0
 while True:
     for event in pygame.event.get():
         if event.type == QUIT:
             exit()
     screen.blit(background, (0,0))
-    screen.blit(car, (x1, 490))
-    screen.blit(car, (x2, 560))
+    screen.blit(car, (x1, 570))
+    #screen.blit(car, (x2, 560))
     time_passed = clock.tick(60)
     time_passed_seconds = time_passed / 1000.0
     distance_moved = time_passed_seconds * speed
@@ -49,3 +50,6 @@ while True:
         x2 -= 1800
     pygame.display.update()
     frame_no += 1
+    time_passed_seconds_cumulative = time_passed_seconds_cumulative+ time_passed_seconds
+
+    print(f"Time spent since started {int(time_passed_seconds_cumulative)}")
