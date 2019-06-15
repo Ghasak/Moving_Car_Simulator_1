@@ -10,7 +10,6 @@ import os
 CURRENT_DIR = os.getcwd()
 BACKGROUND_IMAGE_FILENAME =  os.path.join(CURRENT_DIR,"resources/background.png")
 CAR_FILENAME = os.path.join(CURRENT_DIR,"resources/car2.png")
-
 # print(os.listdir())
 # --------------------------------------------------------
 import pygame
@@ -22,8 +21,7 @@ from sys import exit
 #  green, blue colour .
 white = (255, 255, 255)
 green = (0, 255, 0)
-blue = (0, 0, 128)
-
+blue  = (0, 0, 128)
 pygame.font.init() # you have to call this at the start,
                    # if you want to use this module.
 myfont = pygame.font.SysFont('SF Mono', 30)
@@ -38,7 +36,7 @@ clock = pygame.time.Clock()
 x1 = 0.
 x2 = 0.
 # Speed in pixels per second
-speed = 36.  # pixel/second (1 second)
+speed = 100.  # pixel/second (1 second)
 frame_no = 0
 # --------------------------------------------------------
 time_passed_seconds_cumulative = 0
@@ -53,7 +51,7 @@ while True:
     screen.blit(textsurface,(x1+50,500))
 
     #screen.blit(car, (x2, 560))
-    time_passed = clock.tick(120)  # This is a timer
+    time_passed = clock.tick(60)  # This is a timer
     time_passed_seconds = time_passed / 1000.0
     distance_moved = time_passed_seconds * speed
     x1 += distance_moved
