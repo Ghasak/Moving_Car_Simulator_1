@@ -1,5 +1,5 @@
 '''
-    We will try to understand the motion of objects
+    We will try to understand the motion of objects,
 
 '''
 import pygame
@@ -9,7 +9,7 @@ import os
 # --------------------------------------------------------
 CURRENT_DIR = os.getcwd()
 BACKGROUND_IMAGE_FILENAME =  os.path.join(CURRENT_DIR,"resources/background.png")
-CAR_FILENAME = os.path.join(CURRENT_DIR,"resources/car2.png")
+CAR_FILENAME = os.path.join(CURRENT_DIR,"resources/car3.png")
 # print(os.listdir())
 # --------------------------------------------------------
 import pygame
@@ -46,9 +46,11 @@ while True:
             exit()
 
     screen.blit(background, (0,0))
-    screen.blit(car, (x1, 500))
-    textsurface = myfont.render(f"Time {int(time_passed_seconds_cumulative)}", True, green, blue)
+    screen.blit(car, (x1, 568))
+    textsurface = myfont.render(f"Time {int(time_passed_seconds_cumulative)} sec.", True, green, blue)
+    distance_traveled_label = myfont.render(f"Distance {int(x1)} m.", True, green, blue)
     screen.blit(textsurface,(x1+50,500))
+    screen.blit(distance_traveled_label,(x1+50,530))
 
     #screen.blit(car, (x2, 560))
     time_passed = clock.tick(60)  # This is a timer
@@ -69,7 +71,8 @@ while True:
     time_passed_seconds_cumulative = time_passed_seconds_cumulative+ time_passed_seconds
     print(f"Time spent since lanching =  {int(time_passed_seconds_cumulative)}")
     print(f"while the delta time in millisecond = {time_passed *1000}")
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system('cls' if os.name ==
+    'nt' else 'clear')
 
 
 
