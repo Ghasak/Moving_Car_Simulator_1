@@ -1,6 +1,5 @@
 '''
     Added the Class object - Movement is in one direction only.
-
 '''
 import pygame
 from pygame.locals import *
